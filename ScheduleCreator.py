@@ -1,5 +1,4 @@
 import sys
-import input
 
 if sys.version_info[0] != 3:
     print("Error: this script requires Python 3")
