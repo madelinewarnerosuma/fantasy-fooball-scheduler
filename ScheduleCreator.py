@@ -30,13 +30,7 @@ For more Information:
 
 # ######################### functions ##########################
 
-# function for error handling - deal with each possible mistype scenario
-# function for printing out the schedule with the names (?)
-# Need to find a way to store the hardcoded schedule in a sleek format
-
-# dict: size of 13, in order
-
-def createWeekOneDict(divisionList):
+def getWeekOne(divisionList):
     # divisionList[0] = divisionOne
     # divisionList[1] = divisionTwo
     # divisionList[2] = divisionThree
@@ -47,7 +41,34 @@ def createWeekOneDict(divisionList):
 
     return weekOne
 
-def createWeekEightDict(divisionList):
+def getWeekTwo(divisionList):
+    return {}
+
+def getWeekThree(divisionList):
+    return {}
+
+def getWeekFour(divisionList):
+    divisionOne = divisionList[0]
+    divisionTwo = divisionList[1]
+    divisionThree = divisionList[2]
+    return {divisionOne[3]: divisionOne[0],
+            divisionOne[2]: divisionOne[1],
+            divisionTwo[0]: divisionTwo[2],
+            divisionTwo[3]: divisionTwo[1],
+            divisionThree[3]: divisionThree[0],
+            divisionThree[1]: divisionThree[2]
+            }
+
+def getWeekFive(divisionList):
+    return {}
+
+def getWeekSix(divisionList):
+    return {}
+
+def getWeekSeven(divisionList):
+    return {}
+
+def getWeekEight(divisionList):
     # divisionList[0] = divisionOne
     # divisionList[1] = divisionTwo
     # divisionList[2] = divisionThree
@@ -58,58 +79,59 @@ def createWeekEightDict(divisionList):
 
     return weekEight
 
+def getWeekNine(divisionList):
+    return {}
+
+def getWeekTen(divisionList):
+    return {}
+
+def getWeekEleven(divisionList):
+    divisionOne = divisionList[0]
+    divisionTwo = divisionList[1]
+    divisionThree = divisionList[2]
+    return {divisionOne[0]: divisionOne[3],
+            divisionOne[1]: divisionOne[2],
+            divisionTwo[2]: divisionTwo[0],
+            divisionTwo[1]: divisionTwo[3],
+            divisionThree[0]: divisionThree[3],
+            divisionThree[2]: divisionThree[1]
+            }
+
+def getWeekTwelve(divisionList):
+    return {}
+
+def getWeekThirteen(divisionList):
+    return {}
+
 def createGameDictionary(divisionList):
     # D1: [A, B, C, D]
     # D2: [E, F, G, H]
     # D3: [I, J, K, L]
-    divisionOne = divisionList[0]
-    divisionTwo = divisionList[1]
-    divisionThree = divisionList[2]
-
-    weekOne = createWeekOneDict(divisionList)
-
-    weekFour = {divisionOne[3]: divisionOne[0],
-                divisionOne[2]: divisionOne[1],
-                divisionTwo[0]: divisionTwo[2],
-                divisionTwo[3]: divisionTwo[1],
-                divisionThree[3]: divisionThree[0],
-                divisionThree[1]: divisionThree[2]
-               }
-    weekEight = createWeekEightDict(divisionList)
-    return [weekOne, weekFour, weekEight]
+    return [getWeekOne(divisionList),  getWeekTwo(divisionList), getWeekThree(divisionList), getWeekFour(divisionList),
+            getWeekFive(divisionList), getWeekSix(divisionList), getWeekSeven(divisionList), getWeekEight(divisionList),
+            getWeekNine(divisionList), getWeekTen(divisionList), getWeekEleven(divisionList),
+            getWeekTwelve(divisionList), getWeekThirteen(divisionList)]
 
 def printWeekSchedule(weekList):
-    print("Week 1:")
-    print("Week 2:")
-    print("Week 3:")
-    print("Week 4:")
-    print("Week 5:")
-    print("Week 6:")
-    print("Week 7:")
-    print("Week 8:")
-    print("Week 9:")
-    print("Week 10:")
-    print("Week 11:")
-    print("Week 12:")
-    print("Week 13:")
-
+    for i in range(1, len(weekList) + 1):
+        print("Week " + str(i) + ":")
+        for away, home in weekList[i-1].items():
+            print(away + " @ " + home)
+        print(" ")
 
 def main():
     divisionOne = []
     divisionTwo = []
     divisionThree = []
-    print("Please print the first name of each owner in division 1 - then press enter.")
+    divisionNameList = [divisionOne, divisionTwo, divisionThree]
+    letterArray = ["A", "B", "C", "D"]
 
     for i in range(1, 4):
-        divisionOne.append(input("Division One, Team " + str(i)))
+        print("Please print the first name of each owner in division " + str(i) + "- then press enter.")
+        for j in range(1, 5):
+            divisionNameList[i-1].append(input("Division " + str(i) + ", Team " + letterArray[j-1] + ": "))
 
-    print("Please print the first name of each owner in division 2 - then press enter.")
-    for j in range(1, 4):
-        divisionTwo.append(input("Division Two, Team " + str(j) + "name:"))
-
-    for k in range(1, 4):
-        divisionThree.append(input("Division Three, Team " + str(k) + "name:"))
-
-
+    weekDictionary = createGameDictionary(divisionNameList)
+    printWeekSchedule(weekDictionary)
 
 main()
