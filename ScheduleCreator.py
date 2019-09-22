@@ -5,23 +5,19 @@ if sys.version_info[0] != 3:
     sys.exit(1)
 # ######################### help and usage information ##########################
 
-help_msg = "This script takes the names of each owner from each division and assigns them a schedule."
-
-""""
-
-"""
+help_msg = "This script takes the names of each owner from each division and assigns them a schedule based on a three" \
+           "division system."
 
 usage_msg = """
 Usage:
   python3 ScheduleCreator.py
   
-  Please print the first name of each owner in division 1 - then press enter.
+  "Please print the first name of each owner in division <x> - then press enter."
   For example:
-  Adam Bob Chris Dan <enter>
-  Please print the first name of each owner in division 2
-  Please print the first name of each owner in division 3
+  Division 1, Team A: <name> <enter>
+  Division 1, Team B: <name> <enter>
   
-  Then, do the work to assign them to the correct divisions
+  Then, script will do the work to assign them to the correct games for a thirteen week schedule.
   
 For more Information:
   python3 ScheduleCreator.py --help
