@@ -10,7 +10,7 @@ help_msg = "This script takes the names of each owner from each division and ass
 
 usage_msg = """
 Usage:
-  python3 ScheduleCreator.py
+  python3 schedule_creator.py
   
   "Please print the first name of each owner in division <x> - then press enter."
   For example:
@@ -20,7 +20,7 @@ Usage:
   Then, script will do the work to assign them to the correct games for a thirteen week schedule.
   
 For more Information:
-  python3 ScheduleCreator.py --help
+  python3 schedule_creator.py --help
 """
 
 
