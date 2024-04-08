@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="multipart/form-data"> -->
+    <meta charset="UTF-8">
+    <title>Create Schedule</title>
+</head>
+<body>
+    <form action="{{ url_for('create_schedule') }}" method="post">
+        <b>Division One</b><br>
+        <label>First and Last Name</label><br>
+        <input type="text" name="div_one_team_one"><br>
+        <input type="text" name="div_one_team_two"><br>
+        <input type="text" name="div_one_team_three"><br>
+        <input type="text" name="div_one_team_four"><br><br>
+        <b>Division Two</b><br>
+        <input type="text" name="div_two_team_one"><br>
+        <input type="text" name="div_two_team_two"><br>
+        <input type="text" name="div_two_team_three"><br>
+        <input type="text" name="div_two_team_four"><br>
+        <b>Division Three</b><br>
+        <input type="text" name="div_two_team_one"><br>
+        <input type="text" name="div_two_team_two"><br>
+        <input type="text" name="div_two_team_three"><br>
+        <input type="text" name="div_two_team_four"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
