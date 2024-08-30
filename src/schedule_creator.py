@@ -17,7 +17,7 @@ Usage:
   Division 1, Team A: <name> <enter>
   Division 1, Team B: <name> <enter>
 
-  Then, script will do the work to assign them to the correct games for a thirteen week schedule.
+  Then, script will do the work to assign them to the correct games for a fourteen week schedule.
 
 For more Information:
   python3 schedule_creator.py --help
@@ -115,6 +115,7 @@ def getWeekSeven(divisionList):
     divisionOne = divisionList[0]
     divisionTwo = divisionList[1]
     divisionThree = divisionList[2]
+
     return {
         divisionOne[0]: divisionOne[2],
         divisionOne[1]: divisionOne[3],
