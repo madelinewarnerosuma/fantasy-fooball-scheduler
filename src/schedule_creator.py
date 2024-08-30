@@ -45,7 +45,7 @@ def getWeekTwo(divisionList):
     divisionThree = divisionList[2]
     return {
         divisionOne[0]: divisionTwo[0],
-        divisionTwo[3]: divisionOne[2],
+        divisionOne[2]: divisionTwo[3],
         divisionThree[3]: divisionOne[3],
         divisionOne[1]: divisionThree[0],
         divisionTwo[2]: divisionThree[2],
@@ -175,7 +175,7 @@ def getWeekEleven(divisionList):
         divisionOne[2]: divisionTwo[0],
         divisionOne[3]: divisionThree[2],
         divisionThree[1]: divisionOne[1],
-        divisionTwo[2]: divisionThree[0],
+        divisionThree[0]: divisionTwo[2],
         divisionThree[3]: divisionTwo[1]
     }
 
